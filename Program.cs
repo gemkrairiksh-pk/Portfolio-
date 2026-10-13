@@ -24,4 +24,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+var port = Environment.GetEnvironmentVariable("Port") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}"); 
+
 app.Run();
