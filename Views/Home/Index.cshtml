@@ -1,0 +1,96 @@
+@model List<portfolio.Models.Project>
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-eyebrow">Master of Information Technology</div>
+        <h1 class="hero-name">Parabha (Gem) Krairiksh</h1>
+        <p class="hero-tagline">IT graduate with a focus on machine learning and mobile development, looking to apply technical skills across software and data roles.</p>
+        <div class="hero-cta">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint">↓</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container about-grid">
+        <div class="about-image-wrap">
+            <!-- Replace with your own photo: wwwroot/images/profile.jpg -->
+            <img src="/images/profile/profile.png" alt="Parabha" />
+        </div>
+        <div class="about-text">
+            <span class="section-label">About Me</span>
+            <h2>A bit about who I am</h2>
+            <p>I recently completed my Master of Information Technology, where I developed a strong foundation in software engineering, data science,  web and mobile development. My studies were driven by a genuine curiosity for how technology can solve real problems.</p>
+            <p>Before my Master of Information Technology, I have a completed a Bachelor of business focusing on markinga and finance and a background in client-focused retail and financial project work. I enjoy working across the full stack, but I'm particularly drawn to to the intersection of data and business — using machine learning and analytics to solve problems that have real financial or human impact.</p>
+            <p>Outside of tech, I enjoy playing tennis and pilates. I believe the best engineers are also good communicators and collaborators — and I work hard to be both.</p>
+            <div class="about-tags">
+                <span class="tag">Swift / iOS</span>
+                <span class="tag">Python</span>
+                <span class="tag">C# / .NET</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Java</span>
+                <span class="tag">SQL</span>
+                <!-- Tools -->
+                <span class="tag">Xcode</span>
+                <span class="tag">Git / GitLab</span>
+                <span class="tag">Weka</span>
+                <span class="tag">VS Code</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+    <div class="container">
+        <span class="section-label">Work</span>
+        <h2>Projects</h2>
+        <p class="projects-intro">A selection of projects completed during and alongside my Master of Information Technology.</p>
+
+        <div class="project-grid">
+            @foreach (var project in Model)
+            {
+                <a href="/project/detail/@project.Slug" class="project-card">
+                    <div class="project-card-image">
+                        @if (!string.IsNullOrEmpty(project.CoverImage))
+                        {
+                            <img src="@project.CoverImage" alt="@project.Title screenshot"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                        }
+                        <div class="project-card-placeholder" @(string.IsNullOrEmpty(project.CoverImage) ? "" : "style=\"display:none\"")>
+                            <span>@project.Category</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-category">@project.Category</span>
+                        <h3 class="project-title">@project.Title</h3>
+                        <p class="project-desc">@project.ShortDescription</p>
+                        <div class="project-stack">@project.TechStack</div>
+                        <span class="project-cta">View project →</span>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container contact-inner">
+        <span class="section-label">Contact</span>
+        <h2>Let's connect</h2>
+        <p>I'm currently open to graduate and junior roles. Feel free to reach out via email or LinkedIn.</p>
+        <div class="contact-links">
+            <a href="mailto:gemkrairiksh@gmail.com" class="btn-primary">gemkrairiksh@gmail.com</a>
+            <a href="https://linkedin.com/in/gem-krairiksh-5268b5320" class="btn-secondary" target="_blank">LinkedIn</a>
+            <a href="https://github.com/gemkrairiksh-pk" class="btn-secondary" target="_blank">GitHub</a>
+        </div>
+    </div>
+</section>
