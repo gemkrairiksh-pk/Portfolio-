@@ -16,16 +16,17 @@ The app allows users to follow and log daily workouts, for users who want to sta
 
 The project involved designing a clean, intuitive UI that follows Apple's Human Interface Guidelines, implementing local data persistence with Core Data, and building a RESTful API integration for cloud sync. Also includes user account creation and authentication via Firebase",
             GitHubUrl = "https://github.com/gemkrairiksh/fitventure-ios",
-            TechStack = "Swift, SwiftUI, Core Data, HealthKit, REST API, XCode, Firebase Authentication, Firebase Firestore",
+            TechStack = "Swift, SwiftUI, Xcode, Firebase Authentication, Firebase Firestore, Exercise API",
             Category = "IPhone Software Engineering",
             Features = new List<string>
             {
-                "Workout logging with custom exercise library",
-                "Nutrition tracking and calorie counter",
-                "Progress charts using Swift Charts",
-                "Apple HealthKit integration",
-                "Push notifications for goal reminders",
-                "Dark mode support"
+                "Gamified daily workout plans with progressive difficulty (running, full body exercises)",
+                "Exercise movements generated via third-party Exercise API",
+                "Built-in workout timer with automatic rest/break intervals",
+                "User authentication and account creation via Firebase (email sign-up)",
+                "Virtual pet system — earn points from workouts to feed, level up and buy new pets",
+                "Pet health and happiness tracked based on workout consistency"
+
             },
             // Place your screenshots in wwwroot/images/projects/iphone-app/
             // e.g. screen1.png, screen2.png, screen3.png
